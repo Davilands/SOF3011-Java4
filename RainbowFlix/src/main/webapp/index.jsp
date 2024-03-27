@@ -1,0 +1,866 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt"%>
+<!doctype html>
+<html lang="en">
+
+<head>
+<title>Rainbow Flix - Trang chủ</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link
+	href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700'
+	rel='stylesheet' type='text/css'>
+<link rel="shortcut icon" href="images/unicorn.png" type="image/x-icon">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- bsv5 -->
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script> -->
+
+	<!-- icon -->
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'
+		rel='stylesheet'>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/button/btn.css">
+	<link rel="stylesheet" href="assets/css/responsive.css">
+	<link rel="stylesheet" href="css/footer.css">
+	
+	<!-- toast -->
+	<script src="assets/toast/main.js"></script>
+	<link rel="stylesheet" href="assets/toast/toast.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+		integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+		crossorigin="anonymous" />
+</head>
+<style>
+/* Mobile */
+@media ( max-width : 46.1875em) {
+	.content {
+		padding: 0;
+	}
+	.row .item {
+		width: 170px;
+		margin: 0 5px;
+		padding: 0 0;
+	}
+	.item img {
+		width: 100%;
+		height: 95.24px;
+	}
+}
+</style>
+</head>
+
+<body>
+	<c:if test="${logoutStatus == 1}">
+		<script type="text/javascript">
+			//đăng xuất thành công
+		</script>
+	</c:if> 
+	<%-- <c:choose>
+		<c:when test="${loginStatus == true}">
+			<script>
+			//toast
+		    function showSuccessToast() {
+		        toast({
+		            title: "Thành công!",
+		            message: "Đăng xuất thành công.",
+		            type: "success",
+		            duration: 100000
+		        });
+		    }
+		    showSuccessToast();
+		</script>
+		</c:when>
+	</c:choose> --%>
+	
+
+	<div class="top-container">
+		<h1>Rainbow Flix</h1>
+		<p>Chúng tôi yêu phim, như yêu vợ bạn!</p>
+	</div>
+
+	<!-- <div style="z-index: 999;" class="header" id="myHeader">
+		<section class="ftco-section">
+			<nav
+				class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
+				id="ftco-navbar">
+				<div class="container">
+					<a class="navbar-brand" style="width: 50px;" href="index.jsp"><img
+						style="width: 100%;" src="images/unicorn.png" alt="" srcset=""></a>
+
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#ftco-nav" aria-controls="ftco-nav"
+						aria-expanded="false" aria-label="Toggle navigation">
+						<span class="fa fa-bars"></span> Menu
+					</button>
+					<div class="collapse navbar-collapse" id="ftco-nav">
+						<ul class="navbar-nav m-auto">
+							<li class="nav-item active"><a href="#" class="nav-link">Trang
+									chủ</a></li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+									aria-haspopup="true" aria-expanded="false">Page</a>
+								<div class="dropdown-menu" aria-labelledby="dropdown04">
+									<a class="dropdown-item" href="">Page 1</a>
+									<a class="dropdown-item" href="">Page 2</a>
+									<a class="dropdown-item" href="">Page 3</a>
+									<a class="dropdown-item" href="">Page 4</a>
+								</div>
+							</li>
+							<li class="nav-item"><a href="pages/list.jsp"
+								class="nav-link">Phim hay</a></li>
+
+							<li class="nav-item"><a href="pages/qna.html"
+								class="nav-link">Hỏi đáp</a></li>
+							<li class="nav-item"><a href="pages/contact.html"
+								class="nav-link">Liên hệ</a></li>
+							<li class="nav-item"><a href="pages/about.html"
+								class="nav-link">Về chúng tôi</a></li>
+						</ul>
+
+						<ul class="navbar-nav">
+							<li class="nav-item dropdown"><a
+								class="nav-link dropdown-toggle" href="#" id="dropdown04"
+								data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">Tài khoản</a>
+								<div class="dropdown-menu" aria-labelledby="dropdown04">
+									<a class="dropdown-item" href="pages/login.jsp">Đăng nhập</a> <a
+										class="dropdown-item" href="pages/register.jsp">Đăng ký</a>
+									<a class="dropdown-item" href="">Đăng xuất</a>
+								</div></li>
+						</ul>
+					</div>
+
+				</div>
+			</nav>
+			END nav
+		</section>
+	</div>
+ -->
+	<%@ include file="common/header.jsp"%>
+	<div class="content">
+
+		<div class="hot">
+			<h1 style="z-index: -999;">Được xem nhiều nhất</h1>
+			<div class="list-video">
+				<div class="row">
+					<div class="item">
+						<img src="images/thumnail/boku-no-pico.jpg" alt="">
+						<div class="name">
+							<p>Boku no Piko | My Pico | ぼ く の</p>
+						</div>
+						<div class="views">
+							<p>
+								<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+							</p>
+						</div>
+						<div class="status">
+							<p class="like">
+								<i class='bx bxs-like'></i> 245
+							</p>
+							<p class="dislike">
+								<i class='bx bxs-dislike'></i> 23
+							</p>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="images/thumnail/my-hero-academia.jpg" alt="">
+						<div class="name">
+							<p>My Hero Accademia - Học viện anh hùng</p>
+						</div>
+						<div class="views">
+							<p>
+								<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+							</p>
+						</div>
+						<div class="status">
+							<p class="like">
+								<i class='bx bxs-like'></i> 245
+							</p>
+							<p class="dislike">
+								<i class='bx bxs-dislike'></i> 23
+							</p>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="images/thumnail/dr-stone.jpg" alt="">
+						<div class="name">
+							<p>Dr Stone - Tiến sĩ đá</p>
+						</div>
+						<div class="views">
+							<p>
+								<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+							</p>
+						</div>
+						<div class="status">
+							<p class="like">
+								<i class='bx bxs-like'></i> 245
+							</p>
+							<p class="dislike">
+								<i class='bx bxs-dislike'></i> 23
+							</p>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="images/thumnail/nang-dau-hallowee.jpg" alt="">
+						<div class="name">
+							<p>Nàng dâu halloween - Conan thám tử lừng danh</p>
+						</div>
+						<div class="views">
+							<p>
+								<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+							</p>
+						</div>
+						<div class="status">
+							<p class="like">
+								<i class='bx bxs-like'></i> 245
+							</p>
+							<p class="dislike">
+								<i class='bx bxs-dislike'></i> 23
+							</p>
+						</div>
+					</div>
+
+
+				</div>
+
+				<div class="more">
+					<button style="border: none !important; outline: none;"
+						class="btn-collapse" data-toggle="collapse"
+						data-target="#collapseExample" aria-expanded="false"
+						aria-controls="collapseExample">
+						<p>Thêm</p>
+						<svg stroke-width="4" stroke="currentColor" viewBox="0 0 24 24"
+							fill="none" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg">
+							<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linejoin="round"
+								stroke-linecap="round"></path>
+						</svg>
+					</button>
+					<div class="collapse" id="collapseExample">
+						<div class="row">
+							<div class="item">
+								<img src="images/thumnail/sky-tour.jpg" alt="">
+								<div class="name">
+									<p>Sky Tour - Sơn Tùng MTP</p>
+								</div>
+								<div class="views">
+									<p>
+										<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+									</p>
+								</div>
+								<div class="status">
+									<p class="like">
+										<i class='bx bxs-like'></i> 245
+									</p>
+									<p class="dislike">
+										<i class='bx bxs-dislike'></i> 23
+									</p>
+								</div>
+							</div>
+
+							<div class="item">
+								<img src="images/thumnail/my-hero-academia.jpg" alt="">
+								<div class="name">
+									<p>My Hero Accademia - Học viện anh hùng</p>
+								</div>
+								<div class="views">
+									<p>
+										<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+									</p>
+								</div>
+								<div class="status">
+									<p class="like">
+										<i class='bx bxs-like'></i> 245
+									</p>
+									<p class="dislike">
+										<i class='bx bxs-dislike'></i> 23
+									</p>
+								</div>
+							</div>
+
+							<div class="item">
+								<img src="images/thumnail/dr-stone.jpg" alt="">
+								<div class="name">
+									<p>Dr Stone - Tiến sĩ đá</p>
+								</div>
+								<div class="views">
+									<p>
+										<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+									</p>
+								</div>
+								<div class="status">
+									<p class="like">
+										<i class='bx bxs-like'></i> 245
+									</p>
+									<p class="dislike">
+										<i class='bx bxs-dislike'></i> 23
+									</p>
+								</div>
+							</div>
+
+							<div class="item">
+								<img src="images/thumnail/nang-dau-hallowee.jpg" alt="">
+								<div class="name">
+									<p>Nàng dâu halloween - Conan thám tử lừng danh</p>
+								</div>
+								<div class="views">
+									<p>
+										<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+									</p>
+								</div>
+								<div class="status">
+									<p class="like">
+										<i class='bx bxs-like'></i> 245
+									</p>
+									<p class="dislike">
+										<i class='bx bxs-dislike'></i> 23
+									</p>
+								</div>
+							</div>
+
+
+						</div>
+
+						<div class="row">
+							<div class="item">
+								<img src="images/thumnail/nang-dau-hallowee.jpg" alt="">
+								<div class="name">
+									<p>Nàng dâu halloween - Conan thám tử lừng danh</p>
+								</div>
+								<div class="views">
+									<p>
+										<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+									</p>
+								</div>
+								<div class="status">
+									<p class="like">
+										<i class='bx bxs-like'></i> 245
+									</p>
+									<p class="dislike">
+										<i class='bx bxs-dislike'></i> 23
+									</p>
+								</div>
+							</div>
+
+							<div class="item">
+								<img src="images/thumnail/conan-kid.jpg" alt="">
+								<div class="name">
+									<p>Sherlock Holmes tái sinh - Conan thám tử lừng danh</p>
+								</div>
+								<div class="views">
+									<p>
+										<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+									</p>
+								</div>
+								<div class="status">
+									<p class="like">
+										<i class='bx bxs-like'></i> 245
+									</p>
+									<p class="dislike">
+										<i class='bx bxs-dislike'></i> 23
+									</p>
+								</div>
+							</div>
+
+							<div class="item">
+								<img src="images/thumnail/captain-america-civil-war.jpg" alt="">
+								<div class="name">
+									<p>Captain America Civil War full 4K</p>
+								</div>
+								<div class="views">
+									<p>
+										<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+									</p>
+								</div>
+								<div class="status">
+									<p class="like">
+										<i class='bx bxs-like'></i> 245
+									</p>
+									<p class="dislike">
+										<i class='bx bxs-dislike'></i> 23
+									</p>
+								</div>
+							</div>
+
+							<div class="item">
+								<img src="images/thumnail/spiderman-no-way-home.jpg" alt="">
+								<div class="name">
+									<p>Spider-Man No Way Home - Full 4K</p>
+								</div>
+								<div class="views">
+									<p>
+										<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+									</p>
+								</div>
+								<div class="status">
+									<p class="like">
+										<i class='bx bxs-like'></i> 245
+									</p>
+									<p class="dislike">
+										<i class='bx bxs-dislike'></i> 23
+									</p>
+								</div>
+							</div>
+
+							<div class="item">
+								<img src="images/thumnail/buku-no-pico.jpg" alt="">
+								<div class="name">
+									<p>Boku no Piko | My Pico | ぼ く の</p>
+								</div>
+								<div class="views">
+									<p>
+										<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+									</p>
+								</div>
+								<div class="status">
+									<p class="like">
+										<i class='bx bxs-like'></i> 245
+									</p>
+									<p class="dislike">
+										<i class='bx bxs-dislike'></i> 23
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="list-flix">
+			<h1>Danh sách videos</h1>
+			<div class="list-video">
+				<div class="row">
+
+					<c:forEach items="${videos}" var="video">
+						<a class="item" href="<c:url value='/video?action=watch&id=${video.id}'/>">
+							<img src="images/thumnail/${video.poster }" alt="">
+							<div class="name">
+								<p>${video.title}</p>
+							</div>
+							<div class="views">
+								<p>
+									<i class='bx bx-show-alt'></i> ${video.views} lượt xem
+								</p>
+							</div>
+							<div class="status">
+								<p class="like">
+									<i class='bx bxs-like'></i> ${video.likes }
+								</p>
+								<p class="dislike">
+									<i class='bx bxs-share'></i> ${video.shares}
+								</p>
+							</div>
+						</a>
+					</c:forEach>
+					<!-- 
+					<div class="item">
+						<img src="images/thumnail/nang-dau-hallowee.jpg" alt="">
+						<div class="name">
+							<p>Nàng dâu halloween - Conan thám tử lừng danh</p>
+						</div>
+						<div class="views">
+							<p>
+								<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+							</p>
+						</div>
+						<div class="status">
+							<p class="like">
+								<i class='bx bxs-like'></i> 245
+							</p>
+							<p class="dislike">
+								<i class='bx bxs-dislike'></i> 23
+							</p>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="images/thumnail/conan-kid.jpg" alt="">
+						<div class="name">
+							<p>Sherlock Holmes tái sinh - Conan thám tử lừng danh</p>
+						</div>
+						<div class="views">
+							<p>
+								<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+							</p>
+						</div>
+						<div class="status">
+							<p class="like">
+								<i class='bx bxs-like'></i> 245
+							</p>
+							<p class="dislike">
+								<i class='bx bxs-dislike'></i> 23
+							</p>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="images/thumnail/captain-america-civil-war.jpg" alt="">
+						<div class="name">
+							<p>Captain America Civil War full 4K</p>
+						</div>
+						<div class="views">
+							<p>
+								<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+							</p>
+						</div>
+						<div class="status">
+							<p class="like">
+								<i class='bx bxs-like'></i> 245
+							</p>
+							<p class="dislike">
+								<i class='bx bxs-dislike'></i> 23
+							</p>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="images/thumnail/spiderman-no-way-home.jpg" alt="">
+						<div class="name">
+							<p>Spider-Man No Way Home - Full 4K</p>
+						</div>
+						<div class="views">
+							<p>
+								<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+							</p>
+						</div>
+						<div class="status">
+							<p class="like">
+								<i class='bx bxs-like'></i> 245
+							</p>
+							<p class="dislike">
+								<i class='bx bxs-dislike'></i> 23
+							</p>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="images/thumnail/mugen-train.jpg" alt="">
+						<div class="name">
+							<p>Demon Slayer Mugen Train</p>
+						</div>
+						<div class="views">
+							<p>
+								<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+							</p>
+						</div>
+						<div class="status">
+							<p class="like">
+								<i class='bx bxs-like'></i> 245
+							</p>
+							<p class="dislike">
+								<i class='bx bxs-dislike'></i> 23
+							</p>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="images/thumnail/yugioh-the-dark-side-of-dimensions.jpg"
+							alt="">
+						<div class="name">
+							<p>Yugioh The Dark Side Of Dimensions</p>
+						</div>
+						<div class="views">
+							<p>
+								<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+							</p>
+						</div>
+						<div class="status">
+							<p class="like">
+								<i class='bx bxs-like'></i> 245
+							</p>
+							<p class="dislike">
+								<i class='bx bxs-dislike'></i> 23
+							</p>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="images/thumnail/naruto-shippuden.jpg" alt="">
+						<div class="name">
+							<p>Naruto Shippuden</p>
+						</div>
+						<div class="views">
+							<p>
+								<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+							</p>
+						</div>
+						<div class="status">
+							<p class="like">
+								<i class='bx bxs-like'></i> 245
+							</p>
+							<p class="dislike">
+								<i class='bx bxs-dislike'></i> 23
+							</p>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="images/thumnail/your-name.jpg" alt="">
+						<div class="name">
+							<p>Your Name</p>
+						</div>
+						<div class="views">
+							<p>
+								<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+							</p>
+						</div>
+						<div class="status">
+							<p class="like">
+								<i class='bx bxs-like'></i> 245
+							</p>
+							<p class="dislike">
+								<i class='bx bxs-dislike'></i> 23
+							</p>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="images/thumnail/mo-dom-dom.jpg" alt="">
+						<div class="name">
+							<p>Mộ Đom Đóm</p>
+						</div>
+						<div class="views">
+							<p>
+								<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+							</p>
+						</div>
+						<div class="status">
+							<p class="like">
+								<i class='bx bxs-like'></i> 245
+							</p>
+							<p class="dislike">
+								<i class='bx bxs-dislike'></i> 23
+							</p>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="images/thumnail/5cm-s.jpg" alt="">
+						<div class="name">
+							<p>5cm/s - Shinkai Makoto</p>
+						</div>
+						<div class="views">
+							<p>
+								<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+							</p>
+						</div>
+						<div class="status">
+							<p class="like">
+								<i class='bx bxs-like'></i> 245
+							</p>
+							<p class="dislike">
+								<i class='bx bxs-dislike'></i> 23
+							</p>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="images/thumnail/my-hero-academia.jpg" alt="">
+						<div class="name">
+							<p>My Hero Accademia - Học viện anh hùng</p>
+						</div>
+						<div class="views">
+							<p>
+								<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+							</p>
+						</div>
+						<div class="status">
+							<p class="like">
+								<i class='bx bxs-like'></i> 245
+							</p>
+							<p class="dislike">
+								<i class='bx bxs-dislike'></i> 23
+							</p>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="images/thumnail/One-Punch-Man.jpg" alt="">
+						<div class="name">
+							<p>One Punch Man - Shingo Natsume</p>
+						</div>
+						<div class="views">
+							<p>
+								<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+							</p>
+						</div>
+						<div class="status">
+							<p class="like">
+								<i class='bx bxs-like'></i> 245
+							</p>
+							<p class="dislike">
+								<i class='bx bxs-dislike'></i> 23
+							</p>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="images/thumnail/dr-stone.jpg" alt="">
+						<div class="name">
+							<p>Dr Stone - Tiến sĩ đá</p>
+						</div>
+						<div class="views">
+							<p>
+								<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+							</p>
+						</div>
+						<div class="status">
+							<p class="like">
+								<i class='bx bxs-like'></i> 245
+							</p>
+							<p class="dislike">
+								<i class='bx bxs-dislike'></i> 23
+							</p>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="images/thumnail/co-be-nguoi-ca-ponyo.jpg" alt="">
+						<div class="name">
+							<p>Cô bé người cá Ponyo</p>
+						</div>
+						<div class="views">
+							<p>
+								<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+							</p>
+						</div>
+						<div class="status">
+							<p class="like">
+								<i class='bx bxs-like'></i> 245
+							</p>
+							<p class="dislike">
+								<i class='bx bxs-dislike'></i> 23
+							</p>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="images/thumnail/sky-tour.jpg" alt="">
+						<div class="name">
+							<p>Sky Tour - Sơn Tùng MTP</p>
+						</div>
+						<div class="views">
+							<p>
+								<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+							</p>
+						</div>
+						<div class="status">
+							<p class="like">
+								<i class='bx bxs-like'></i> 245
+							</p>
+							<p class="dislike">
+								<i class='bx bxs-dislike'></i> 23
+							</p>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="images/thumnail/The-Wolf-Of-Wall-Street.jpg" alt="">
+						<div class="name">
+							<p>The Wolf Of Wall Street - Sói già phố Wall</p>
+						</div>
+						<div class="views">
+							<p>
+								<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+							</p>
+						</div>
+						<div class="status">
+							<p class="like">
+								<i class='bx bxs-like'></i> 245
+							</p>
+							<p class="dislike">
+								<i class='bx bxs-dislike'></i> 23
+							</p>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="images/thumnail/titanic.jpg" alt="">
+						<div class="name">
+							<p>Titanic</p>
+						</div>
+						<div class="views">
+							<p>
+								<i class='bx bx-show-alt'></i> 345.678.677 lượt xem
+							</p>
+						</div>
+						<div class="status">
+							<p class="like">
+								<i class='bx bxs-like'></i> 245
+							</p>
+							<p class="dislike">
+								<i class='bx bxs-dislike'></i> 23
+							</p>
+						</div>
+					</div>
+ -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- <footer>
+		<div class="top">
+			<ul>
+				<li><a href="">FGHHV</a></li>
+				<li><a href="">DFGH</a></li>
+				<li><a href="">PC0123</a></li>
+				<li><a href="">FPOLY</a></li>
+				<li><a href="">CANTHO</a></li>
+			</ul>
+		</div>
+
+		<div class="mid">
+			<p>Rainbow Flix là một trang web phát trực tuyến Phim miễn phí
+				không có quảng cáo. Chúng tôi cho phép bạn xem phim trực tuyến mà
+				không cần phải đăng ký hoặc trả tiền, với hơn 10000 bộ phim và
+				TV-Series. Bạn cũng có thể Tải xuống phim đầy đủ từ MoviesCloud và
+				xem sau nếu muốn.</p>
+		</div>
+
+		<div class="bot">
+			<i class='bx bx-copyright'></i> <span>FroggyDev@FPT
+				Polytechnic</span>
+		</div>
+
+	</footer>
+ -->
+
+	<%@ include file="common/footer.jsp"%>
+	<script>
+		window.onscroll = function() {
+			myFunction()
+		};
+
+		var header = document.getElementById("myHeader");
+		var sticky = header.offsetTop;
+
+		function myFunction() {
+			if (window.pageYOffset > sticky) {
+				header.classList.add("sticky");
+			} else {
+				header.classList.remove("sticky");
+			}
+		}
+	</script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>
